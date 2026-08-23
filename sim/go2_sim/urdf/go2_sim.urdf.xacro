@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<!--
+  Unitree Go2 Edu simulation model.
+
+  Sensor suite mirrors the hardware in Naderi et al. (2026) Section 4.1:
+    * RoboSense RS-Helios-32 3D LiDAR mounted on the trunk
+    * RGB-D camera (RealSense-class) facing forward
+    * IMU in the trunk
+
+  Locomotion note: the paper's Module A bridges Nav2's /cmd_vel onto the
+  Unitree SDK's SportMode velocity request - i.e. from the navigation stack's
+  point of view the Go2 is a velocity-commanded base, and the leg controller is
+  a black box below that interface. We therefore drive the trunk with
+  gazebo_ros_planar_move rather than simulating 12 joints of legged contact
+  dynamics, which would not change any SLAM/Nav2 behaviour but would cost more
+  CPU than this machine has (no GPU, software GL). The ROS interface
+  (/cmd_vel in, /odom + TF out) is identical to the real robot's.
+-->
+<robot name="go2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Trunk geometry, from the Go2 datasheet (metres). -->
+  <xacro:property name="trunk_x"  value="0.3762"/>
+  <xacro:property name="trunk_y"  value="0.0935"/>
+  <xacro:property name="trunk_z"  value="0.114"/>
+  <xacro:property name="stand_h"  value="0.32"/>   <!-- trunk height when standing -->
+  <xacro:property name="trunk_m"  value="6.921"/>
+
+  <!-- LiDAR sampling. A 32-beam 360 deg scan is ~29k CPU rays per sweep, which
+       software-rendered WSL cannot sustain. These defaults are the reduced
+       setting; pass lidar_beams:=32 lidar_samples:=900 for full fidelity if you
+       run this on a GPU machine. -->
+  <xacro:arg name="lidar_beams"   default="16"/>
+  <xacro:arg name="lidar_samples" default="440"/>
+  <xacro:arg name="lidar_rate"    default="5.0"/>
+
+  <!-- When RTAB-Map's icp_odometry estimates motion from the point clouds (the
+       paper's configuration) it owns the odom->base_footprint transform, so
+       Gazebo must not also publish it or the TF tree gets two parents. Set
+       false for icp odometry, true to fall back on the simulator's odometry. -->
+  <xacro:arg name="publish_odom_tf" default="false"/>
+
+  <material name="go2_body"><color rgba="0.15 0.15 0.17 1.0"/></material>
+  <material name="sensor_grey"><color rgba="0.4 0.4 0.42 1.0"/></material>
+
+  <!-- ===================== base ===================== -->
+  <link name="base_footprint"/>
+
+  <link name="base_link">
+    <visual>
+      <geometry><box size="${trunk_x} ${trunk_y} ${trunk_z}"/></geometry>
+      <material name="go2_body"/>
+    </visual>
+    <collision>
+      <geometry><box size="${trunk_x} ${trunk_y} ${trunk_z}"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="${trunk_m}"/>
+      <inertia ixx="0.0158" ixy="0.0" ixz="0.0"
+               iyy="0.0377" iyz="0.0" izz="0.0456"/>
+    </inertial>
+  </link>
+
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child  link="base_link"/>
+    <origin xyz="0 0 ${stand_h}" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ===================== LiDAR ===================== -->
+  <link name="lidar_link">
+    <visual>
+      <geometry><cylinder radius="0.055" length="0.08"/></geometry>
+      <material name="sensor_grey"/>
+    </visual>
+    <collision>
+      <geometry><cylinder radius="0.055" length="0.08"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="0.85"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="lidar_link"/>
+    <origin xyz="0.02 0 0.12" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ===================== RGB-D camera ===================== -->
+  <link name="camera_link">
+    <visual>
+      <geometry><box size="0.02 0.09 0.025"/></geometry>
+      <material name="sensor_grey"/>
+    </visual>
+    <inertial>
+      <mass value="0.07"/>
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"/>
+    </inertial>
+  </link>
+
+  <!-- Mounted high on the front of the sensor mast and pitched slightly up.
+       At trunk height a Go2's camera fills the lower half of every frame with
+       bare floor; the hazards that matter (ladders, raised loads, signage,
+       people) sit above that line. Pitching up ~7 deg spends those pixels on
+       the scene instead. Negative pitch is nose-up in REP-103. -->
+  <xacro:arg name="camera_pitch" default="-0.12"/>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="camera_link"/>
+    <origin xyz="${trunk_x/2} 0 0.10" rpy="0 $(arg camera_pitch) 0"/>
+  </joint>
+
+  <!-- REP-103 optical frame: z forward, x right, y down. RTAB-Map expects the
+       camera's image data to be expressed in this frame, not in camera_link. -->
+  <link name="camera_optical_frame"/>
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child  link="camera_optical_frame"/>
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+  </joint>
+
+  <!-- ===================== IMU ===================== -->
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="imu_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ===================== Gazebo materials ===================== -->
+  <gazebo reference="base_link"><material>Gazebo/DarkGrey</material></gazebo>
+  <gazebo reference="lidar_link"><material>Gazebo/Grey</material></gazebo>
+  <gazebo reference="camera_link"><material>Gazebo/Blue</material></gazebo>
+
+  <!-- ===================== LiDAR plugin =====================
+       CPU ray sensor (not gpu_ray): WSL here has no GPU. Vertical FOV matches
+       the Helios-32's -55 to +15 degrees. -->
+  <gazebo reference="lidar_link">
+    <sensor type="ray" name="helios32">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>$(arg lidar_rate)</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>$(arg lidar_samples)</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>$(arg lidar_beams)</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.9599</min_angle>   <!-- -55 deg -->
+            <max_angle>0.2618</max_angle>    <!-- +15 deg -->
+          </vertical>
+        </scan>
+        <range>
+          <min>0.20</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.008</stddev>
+        </noise>
+      </ray>
+      <plugin name="helios32_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <namespace>/</namespace>
+          <remapping>~/out:=/rslidar_points</remapping>
+        </ros>
+        <output_type>sensor_msgs/PointCloud2</output_type>
+        <frame_name>lidar_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- ===================== RGB-D camera plugin ===================== -->
+  <gazebo reference="camera_link">
+    <sensor type="depth" name="rgbd_camera">
+      <always_on>true</always_on>
+      <update_rate>10.0</update_rate>
+      <camera name="rgbd">
+        <horizontal_fov>1.5184</horizontal_fov>  <!-- 87 deg, D435-class -->
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.10</near>
+          <far>10.0</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.005</stddev>
+        </noise>
+      </camera>
+      <plugin name="rgbd_camera_controller" filename="libgazebo_ros_camera.so">
+        <ros><namespace>/camera</namespace></ros>
+        <camera_name>color</camera_name>
+        <frame_name>camera_optical_frame</frame_name>
+        <hack_baseline>0.07</hack_baseline>
+        <min_depth>0.10</min_depth>
+        <max_depth>10.0</max_depth>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- ===================== IMU plugin ===================== -->
+  <gazebo reference="imu_link">
+    <sensor name="go2_imu" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100.0</update_rate>
+      <plugin name="imu_controller" filename="libgazebo_ros_imu_sensor.so">
+        <ros>
+          <namespace>/</namespace>
+          <remapping>~/out:=/imu/data</remapping>
+        </ros>
+        <frame_name>imu_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- ===================== Base motion =====================
+       Consumes /cmd_vel exactly as the real go2_cmd_processor node does, and
+       publishes ground-truth-derived odometry on /odom. odom->base_footprint TF
+       is published here; RTAB-Map supplies map->odom. -->
+  <gazebo>
+    <plugin name="planar_move" filename="libgazebo_ros_planar_move.so">
+      <ros><namespace>/</namespace></ros>
+      <!-- Fed by cmd_vel_bridge, not by Nav2 directly, so that the watchdog and
+           velocity clamps of the real go2_cmd_processor sit in the loop here
+           exactly as they do on hardware. -->
+      <command_topic>cmd_vel_sim</command_topic>
+      <odometry_topic>odom</odometry_topic>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_footprint</robot_base_frame>
+      <odometry_rate>30.0</odometry_rate>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>$(arg publish_odom_tf)</publish_odom_tf>
+      <!-- Wheel-odometry-like drift so SLAM has something real to correct. -->
+      <covariance_x>0.0002</covariance_x>
+      <covariance_y>0.0002</covariance_y>
+      <covariance_yaw>0.0100</covariance_yaw>
+    </plugin>
+  </gazebo>
+
+</robot>

@@ -1,0 +1,503 @@
+[23:09:25] === Scenario A, run 1, SLAM backend 'rtabmap' ===
+[23:09:25] Stack launching (pid 2771).
+[23:09:25] Waiting for Nav2's follow_waypoints action server (up to 6 min)...
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-08-23-23-09-25-654155-LAPTOP-LRQSK7UV-2771
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gzserver-1]: process started with pid [2781]
+[INFO] [robot_state_publisher-2]: process started with pid [2783]
+[INFO] [cmd_vel_bridge-3]: process started with pid [2785]
+[INFO] [pointcloud_to_laserscan_node-4]: process started with pid [2787]
+[robot_state_publisher-2] [INFO] [1787519369.016770096] [robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-2] [INFO] [1787519369.017019125] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1787519369.017036525] [robot_state_publisher]: got segment camera_link
+[robot_state_publisher-2] [INFO] [1787519369.017044693] [robot_state_publisher]: got segment camera_optical_frame
+[robot_state_publisher-2] [INFO] [1787519369.017052440] [robot_state_publisher]: got segment imu_link
+[robot_state_publisher-2] [INFO] [1787519369.017059986] [robot_state_publisher]: got segment lidar_link
+[cmd_vel_bridge-3] [INFO] [1787519369.455916550] [cmd_vel_bridge]: cmd_vel bridge up: /cmd_vel -> /cmd_vel_sim, watchdog 0.25s, limits vx<=0.8 vy<=0.4 wz<=1.0
+[gzserver-1] Gazebo multi-robot simulator, version 11.10.2
+[gzserver-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gzserver-1] Released under the Apache 2 License.
+[gzserver-1] http://gazebosim.org
+[gzserver-1] 
+[gzserver-1] [1;33m[Wrn] [gazebo_ros_init.cpp:178] [0m[1;33m
+[gzserver-1] #     # ####### ####### ###  #####  #######
+[gzserver-1] ##    # #     #    #     #  #     # #
+[gzserver-1] # #   # #     #    #     #  #       #
+[gzserver-1] #  #  # #     #    #     #  #       #####
+[gzserver-1] #   # # #     #    #     #  #       #
+[gzserver-1] #    ## #     #    #     #  #     # #
+[gzserver-1] #     # #######    #    ###  #####  #######
+[gzserver-1] 
+[gzserver-1] This version of Gazebo, now called Gazebo classic, reaches end-of-life
+[gzserver-1] in January 2025. Users are highly encouraged to migrate to the new Gazebo
+[gzserver-1] using our migration guides (https://gazebosim.org/docs/latest/gazebo_classic_migration?utm_source=gazebo_ros_pkgs&utm_medium=cli)
+[gzserver-1] 
+[gzserver-1] [0m[1;33m
+[gzserver-1] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m10.255.255.254[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mLoading world file [[0m[1;32m/root/go2_ws/install/go2_sim/share/go2_sim/worlds/construction_scenario_A.world[0m[1;32m][0m[1;32m
+[INFO] [spawn_entity.py-5]: process started with pid [2926]
+[spawn_entity.py-5] [INFO] [1787519379.378810501] [spawn_entity]: Spawn Entity started
+[spawn_entity.py-5] [INFO] [1787519379.379755258] [spawn_entity]: Loading entity published on topic robot_description
+[spawn_entity.py-5] [INFO] [1787519379.389036314] [spawn_entity]: Waiting for entity xml on robot_description
+[spawn_entity.py-5] [WARN] [1787519379.393170152] [spawn_entity]: '-spawn_service_timeout' is deprecated, use '-timeout' instead
+[spawn_entity.py-5] [INFO] [1787519379.393856883] [spawn_entity]: Waiting for service /spawn_entity, timeout = 180
+[spawn_entity.py-5] [INFO] [1787519379.394260134] [spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-5] [INFO] [1787519379.401059310] [spawn_entity]: Calling service /spawn_entity
+[gzserver-1] [0m[1;33m[0m[1;33m[0m[INFO] [1787519380.394605382] [camera.rgbd_camera_controller]: Publishing camera info to [/camera/color/camera_info]
+[gzserver-1] [INFO] [1787519380.400933432] [camera.rgbd_camera_controller]: Publishing depth camera info to [/camera/color/depth/camera_info]
+[gzserver-1] [INFO] [1787519380.401911390] [camera.rgbd_camera_controller]: Publishing pointcloud to [/camera/color/points]
+[gzserver-1] [INFO] [1787519380.431985458] [imu_controller]: <initial_orientation_as_reference> is unset, using default value of false to comply with REP 145 (world as orientation reference)
+[gzserver-1] [1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[gzserver-1] [0m[1;31m[0m[1;31m[0m[1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[gzserver-1] [0m[1;31m[0m[1;31m[0m[1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[gzserver-1] [0m[1;31m[0m[1;31m[0m[1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[gzserver-1] [0m[1;31m[0m[1;31m[0m[1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[gzserver-1] [0m[1;31m[0m[1;31m[0m[1;31m[Err] [Sensor.cc:510] [0m[1;31mGet noise index not valid[0m[1;31m
+[INFO] [icp_odometry-6]: process started with pid [2940]
+[INFO] [rtabmap-7]: process started with pid [2942]
+[rtabmap-7] [INFO] [1787519383.072447521] [rtabmap]: rtabmap(maps): latch                      = true
+[rtabmap-7] [INFO] [1787519383.072915850] [rtabmap]: rtabmap(maps): map_filter_radius          = 0.000000
+[rtabmap-7] [INFO] [1787519383.072958893] [rtabmap]: rtabmap(maps): map_filter_angle           = 30.000000
+[rtabmap-7] [INFO] [1787519383.072970818] [rtabmap]: rtabmap(maps): map_cleanup                = true
+[rtabmap-7] [INFO] [1787519383.072979795] [rtabmap]: rtabmap(maps): map_always_update          = false
+[rtabmap-7] [INFO] [1787519383.072987122] [rtabmap]: rtabmap(maps): map_empty_ray_tracing      = true
+[rtabmap-7] [INFO] [1787519383.072994418] [rtabmap]: rtabmap(maps): map_cache_loaded_on_init   = true
+[rtabmap-7] [INFO] [1787519383.073001322] [rtabmap]: rtabmap(maps): cloud_output_voxelized     = true
+[rtabmap-7] [INFO] [1787519383.073008296] [rtabmap]: rtabmap(maps): cloud_subtract_filtering   = false
+[rtabmap-7] [INFO] [1787519383.073015361] [rtabmap]: rtabmap(maps): cloud_subtract_filtering_min_neighbors = 2
+[rtabmap-7] [INFO] [1787519383.073254446] [rtabmap]: rtabmap(maps): octomap_tree_depth         = 16
+[icp_odometry-6] [INFO] [1787519383.142237792] [icp_odometry]: Odometry: frame_id               = base_footprint
+[icp_odometry-6] [INFO] [1787519383.142722354] [icp_odometry]: Odometry: odom_frame_id          = odom
+[icp_odometry-6] [INFO] [1787519383.142768074] [icp_odometry]: Odometry: publish_tf             = true
+[icp_odometry-6] [INFO] [1787519383.142777242] [icp_odometry]: Odometry: wait_for_transform     = 0.400000
+[icp_odometry-6] [INFO] [1787519383.142816168] [icp_odometry]: Odometry: log_to_rosout_level    = 4
+[icp_odometry-6] [INFO] [1787519383.142977491] [icp_odometry]: Odometry: initial_pose           = xyz=0.000000,0.000000,0.000000 rpy=0.000000,-0.000000,0.000000
+[icp_odometry-6] [INFO] [1787519383.143011980] [icp_odometry]: Odometry: ground_truth_frame_id  = 
+[icp_odometry-6] [INFO] [1787519383.143021621] [icp_odometry]: Odometry: ground_truth_base_frame_id = base_footprint
+[icp_odometry-6] [INFO] [1787519383.143031483] [icp_odometry]: Odometry: config_path            = 
+[icp_odometry-6] [INFO] [1787519383.143040088] [icp_odometry]: Odometry: publish_null_when_lost = true
+[icp_odometry-6] [INFO] [1787519383.143056210] [icp_odometry]: Odometry: publish_compressed_sensor_data = false
+[icp_odometry-6] [INFO] [1787519383.143067703] [icp_odometry]: Odometry: guess_frame_id         = 
+[icp_odometry-6] [INFO] [1787519383.143077274] [icp_odometry]: Odometry: guess_min_translation  = 0.000000
+[icp_odometry-6] [INFO] [1787519383.143091725] [icp_odometry]: Odometry: guess_min_rotation     = 0.000000
+[icp_odometry-6] [INFO] [1787519383.143106217] [icp_odometry]: Odometry: guess_min_time         = 0.000000
+[icp_odometry-6] [INFO] [1787519383.143116462] [icp_odometry]: Odometry: guess_linear_variance  = 0.001000
+[icp_odometry-6] [INFO] [1787519383.143126969] [icp_odometry]: Odometry: guess_angular_variance = 0.001000
+[icp_odometry-6] [INFO] [1787519383.143135724] [icp_odometry]: Odometry: expected_update_rate   = 0.000000 Hz
+[icp_odometry-6] [INFO] [1787519383.143145275] [icp_odometry]: Odometry: max_update_rate        = 0.000000 Hz
+[icp_odometry-6] [INFO] [1787519383.143154272] [icp_odometry]: Odometry: min_update_rate        = 0.000000 Hz
+[icp_odometry-6] [INFO] [1787519383.143162353] [icp_odometry]: Odometry: wait_imu_to_init       = false
+[icp_odometry-6] [INFO] [1787519383.143169508] [icp_odometry]: Odometry: always_check_imu_tf    = true
+[icp_odometry-6] [INFO] [1787519383.143177117] [icp_odometry]: Odometry: sensor_data_compression_format = .jpg
+[icp_odometry-6] [INFO] [1787519383.143203202] [icp_odometry]: Odometry: sensor_data_parallel_compression = true
+[icp_odometry-6] [INFO] [1787519383.143237952] [icp_odometry]: Odometry: stereoParams_=0 visParams_=0 icpParams_=1
+[icp_odometry-6] [INFO] [1787519383.158800968] [icp_odometry]: Setting odometry parameter "Icp/Epsilon"="0.002"
+[icp_odometry-6] [INFO] [1787519383.160338877] [icp_odometry]: Setting odometry parameter "Icp/Iterations"="12"
+[icp_odometry-6] [INFO] [1787519383.160747447] [icp_odometry]: Setting odometry parameter "Icp/MaxCorrespondenceDistance"="0.6"
+[icp_odometry-6] [INFO] [1787519383.162903334] [icp_odometry]: Setting odometry parameter "Icp/VoxelSize"="0.10"
+[icp_odometry-6] [INFO] [1787519383.170192521] [icp_odometry]: Setting odometry parameter "Odom/ResetCountdown"="10"
+[icp_odometry-6] [INFO] [1787519383.211974734] [icp_odometry]: Setting odometry parameter "Reg/Force3DoF"="true"
+[icp_odometry-6] [WARN] [1787519383.212949222] [icp_odometry]: IcpOdometry: Transferring value 0.10 of "Icp/VoxelSize" to ros parameter "scan_voxel_size" for convenience. "Icp/VoxelSize" is set to 0.
+[icp_odometry-6] [WARN] [1787519383.213056894] [icp_odometry]: IcpOdometry: Transferring value 5 of "Icp/PointToPlaneK" to ros parameter "scan_normal_k" for convenience.
+[icp_odometry-6] [INFO] [1787519383.247313397] [icp_odometry]: IcpOdometry: qos                    = 0
+[icp_odometry-6] [INFO] [1787519383.247411962] [icp_odometry]: IcpOdometry: scan_cloud_max_points  = -1
+[icp_odometry-6] [INFO] [1787519383.247422619] [icp_odometry]: IcpOdometry: scan_cloud_is_2d       = false
+[icp_odometry-6] [INFO] [1787519383.247430690] [icp_odometry]: IcpOdometry: scan_downsampling_step = 1
+[icp_odometry-6] [INFO] [1787519383.247439003] [icp_odometry]: IcpOdometry: scan_range_min         = 0.000000 m
+[icp_odometry-6] [INFO] [1787519383.247452650] [icp_odometry]: IcpOdometry: scan_range_max         = 0.000000 m
+[icp_odometry-6] [INFO] [1787519383.247460671] [icp_odometry]: IcpOdometry: scan_voxel_size        = 0.100000 m
+[icp_odometry-6] [INFO] [1787519383.247499114] [icp_odometry]: IcpOdometry: scan_normal_k          = 5
+[icp_odometry-6] [INFO] [1787519383.247507970] [icp_odometry]: IcpOdometry: scan_normal_radius     = 0.000000 m
+[icp_odometry-6] [INFO] [1787519383.247515840] [icp_odometry]: IcpOdometry: scan_normal_ground_up  = 0.000000
+[icp_odometry-6] [INFO] [1787519383.247588279] [icp_odometry]: IcpOdometry: deskewing              = false
+[icp_odometry-6] [INFO] [1787519383.247606757] [icp_odometry]: IcpOdometry: deskewing_slerp        = false
+[icp_odometry-6] [INFO] [1787519383.247614637] [icp_odometry]: IcpOdometry: topic_queue_size       = 1
+[rtabmap-7] [INFO] [1787519383.163177361] [rtabmap]: rtabmap: frame_id      = "base_footprint"
+[rtabmap-7] [INFO] [1787519383.163448500] [rtabmap]: rtabmap: odom_frame_id = "odom"
+[rtabmap-7] [INFO] [1787519383.163464199] [rtabmap]: rtabmap: ground_truth_frame_id = "" -> ground_truth_base_frame_id = "base_footprint"
+[rtabmap-7] [INFO] [1787519383.163473488] [rtabmap]: rtabmap: map_frame_id  = "map"
+[rtabmap-7] [INFO] [1787519383.163481660] [rtabmap]: rtabmap: log_to_rosout_level  = 4
+[rtabmap-7] [INFO] [1787519383.163490496] [rtabmap]: rtabmap: initial_pose  = ""
+[rtabmap-7] [INFO] [1787519383.163498014] [rtabmap]: rtabmap: use_action_for_goal  = false
+[rtabmap-7] [INFO] [1787519383.163505914] [rtabmap]: rtabmap: tf_delay      = 0.050000
+[rtabmap-7] [INFO] [1787519383.163518906] [rtabmap]: rtabmap: tf_tolerance  = 0.100000
+[rtabmap-7] [INFO] [1787519383.163527360] [rtabmap]: rtabmap: odom_sensor_sync   = false
+[rtabmap-7] [INFO] [1787519383.163534797] [rtabmap]: rtabmap: pub_loc_pose_only_when_localizing = false
+[rtabmap-7] [INFO] [1787519383.163542043] [rtabmap]: rtabmap: wait_for_transform = 0.400000
+[rtabmap-7] [INFO] [1787519383.163550064] [rtabmap]: rtabmap: staleness_factor = 0.000000
+[rtabmap-7] [INFO] [1787519383.163557883] [rtabmap]: rtabmap: gen_scan  = false
+[rtabmap-7] [INFO] [1787519383.163565461] [rtabmap]: rtabmap: gen_depth  = false
+[rtabmap-7] [INFO] [1787519383.163572899] [rtabmap]: rtabmap: scan_cloud_max_points = 0
+[rtabmap-7] [INFO] [1787519383.163586927] [rtabmap]: rtabmap: scan_cloud_is_2d = false
+[pointcloud_to_laserscan_node-4] [WARN] [1787519383.251881740] [pointcloud_to_laserscan]: New subscription discovered on topic '/scan', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[icp_odometry-6] [INFO] [1787519383.267065524] [icp_odometry]: 
+[icp_odometry-6] icp_odometry subscribed to /scan and /rslidar_points (make sure only one of this topic is published, otherwise remap one to a dummy topic name).
+[icp_odometry-6] [WARN] [1787519383.276834318] [icp_odometry]: New publisher discovered on topic '/scan', offering incompatible QoS. No messages will be sent to it. Last incompatible policy: RELIABILITY_QOS_POLICY
+[rtabmap-7] [INFO] [1787519383.271090527] [rtabmap]: Setting RTAB-Map parameter "Grid/3D"="false" (rosparam)
+[rtabmap-7] [INFO] [1787519383.271328305] [rtabmap]: Setting RTAB-Map parameter "Grid/CellSize"="0.05" (rosparam)
+[rtabmap-7] [INFO] [1787519383.271972085] [rtabmap]: Setting RTAB-Map parameter "Grid/MaxGroundHeight"="0.12" (rosparam)
+[rtabmap-7] [INFO] [1787519383.272111821] [rtabmap]: Setting RTAB-Map parameter "Grid/MaxObstacleHeight"="1.2" (rosparam)
+[rtabmap-7] [INFO] [1787519383.275038917] [rtabmap]: Setting RTAB-Map parameter "Grid/RangeMax"="18.0" (rosparam)
+[rtabmap-7] [INFO] [1787519383.275471771] [rtabmap]: Setting RTAB-Map parameter "Grid/RayTracing"="true" (rosparam)
+[rtabmap-7] [INFO] [1787519383.278135114] [rtabmap]: Setting RTAB-Map parameter "Icp/Iterations"="18" (rosparam)
+[rtabmap-7] [INFO] [1787519383.278311683] [rtabmap]: Setting RTAB-Map parameter "Icp/MaxCorrespondenceDistance"="0.5" (rosparam)
+[rtabmap-7] [INFO] [1787519383.279293427] [rtabmap]: Setting RTAB-Map parameter "Icp/PointToPlane"="true" (rosparam)
+[rtabmap-7] [INFO] [1787519383.289056910] [rtabmap]: Setting RTAB-Map parameter "Icp/VoxelSize"="0.08" (rosparam)
+[rtabmap-7] [INFO] [1787519383.325075203] [rtabmap]: Setting RTAB-Map parameter "Optimizer/Strategy"="1" (rosparam)
+[rtabmap-7] [INFO] [1787519383.329302544] [rtabmap]: Setting RTAB-Map parameter "RGBD/AngularUpdate"="0.05" (rosparam)
+[rtabmap-7] [INFO] [1787519383.330220321] [rtabmap]: Setting RTAB-Map parameter "RGBD/LinearUpdate"="0.05" (rosparam)
+[rtabmap-7] [INFO] [1787519383.331029934] [rtabmap]: Setting RTAB-Map parameter "RGBD/OptimizeFromGraphEnd"="false" (rosparam)
+[rtabmap-7] [INFO] [1787519383.331952874] [rtabmap]: Setting RTAB-Map parameter "RGBD/ProximityBySpace"="true" (rosparam)
+[rtabmap-7] [INFO] [1787519383.335193274] [rtabmap]: Setting RTAB-Map parameter "Reg/Force3DoF"="true" (rosparam)
+[rtabmap-7] [INFO] [1787519383.336505673] [rtabmap]: Setting RTAB-Map parameter "Reg/Strategy"="1" (rosparam)
+[rtabmap-7] [INFO] [1787519383.339494217] [rtabmap]: Setting RTAB-Map parameter "Rtabmap/DetectionRate"="1.0" (rosparam)
+[rtabmap-7] [INFO] [1787519383.368288952] [rtabmap]: Setting RTAB-Map parameter "Vis/MinInliers"="18" (rosparam)
+[rtabmap-7] [WARN] [1787519383.378022605] [rtabmap]: Setting "Grid/Sensor" parameter to 0 (default 1) as "subscribe_scan" or "subscribe_scan_cloud" or "gen_scan" is true. The occupancy grid map will be constructed from laser scans. To get occupancy grid map from cloud projection, set "Grid/Sensor" to true. To suppress this warning, add <param name="Grid/Sensor" type="string" value="0"/>
+[rtabmap-7] [INFO] [1787519383.378349366] [rtabmap]: Setting "Icp/PointToPlaneRadius" parameter to 0 (default 0.000000) as "subscribe_scan_cloud" is true.
+[rtabmap-7] [WARN] [1787519383.378402071] [rtabmap]: Setting "RGBD/ProximityPathMaxNeighbors" parameter to 1 (default 0) as "subscribe_scan_cloud" is true and "Reg/Strategy" uses ICP. To disable, set "RGBD/ProximityPathMaxNeighbors" to 0. To suppress this warning, add <param name="RGBD/ProximityPathMaxNeighbors" type="string" value="1"/>
+[rtabmap-7] [INFO] [1787519383.378766903] [rtabmap]: RTAB-Map detection rate = 1.000000 Hz
+[rtabmap-7] [INFO] [1787519383.405139895] [rtabmap]: rtabmap: Deleted database "/root/.ros/rtabmap.db" (--delete_db_on_start or -d are set).
+[rtabmap-7] [INFO] [1787519383.405811251] [rtabmap]: rtabmap: Using database from "/root/.ros/rtabmap.db" (0 MB).
+[rtabmap-7] [INFO] [1787519383.651391359] [rtabmap]: rtabmap: Database version = "0.23.7".
+[rtabmap-7] [INFO] [1787519383.651549690] [rtabmap]: rtabmap: SLAM mode (Mem/IncrementalMemory=true)
+[rtabmap-7] [INFO] [1787519383.723726388] [rtabmap]: Setup callbacks
+[rtabmap-7] [INFO] [1787519383.724128056] [rtabmap]: rtabmap: subscribe_depth = true
+[rtabmap-7] [INFO] [1787519383.724194050] [rtabmap]: rtabmap: subscribe_rgb = true
+[rtabmap-7] [INFO] [1787519383.724207830] [rtabmap]: rtabmap: subscribe_stereo = false
+[rtabmap-7] [INFO] [1787519383.724216963] [rtabmap]: rtabmap: subscribe_rgbd = false (rgbd_cameras=1)
+[rtabmap-7] [INFO] [1787519383.724274900] [rtabmap]: rtabmap: subscribe_sensor_data = false
+[rtabmap-7] [INFO] [1787519383.724340542] [rtabmap]: rtabmap: subscribe_odom = false ("odom_frame_id" is set)
+[rtabmap-7] [INFO] [1787519383.724428534] [rtabmap]: rtabmap: subscribe_odom_info = false
+[rtabmap-7] [INFO] [1787519383.724443341] [rtabmap]: rtabmap: subscribe_user_data = false
+[rtabmap-7] [INFO] [1787519383.724451418] [rtabmap]: rtabmap: subscribe_scan = false
+[rtabmap-7] [INFO] [1787519383.724466958] [rtabmap]: rtabmap: subscribe_scan_cloud = true
+[rtabmap-7] [INFO] [1787519383.724474914] [rtabmap]: rtabmap: subscribe_scan_descriptor = false
+[rtabmap-7] [INFO] [1787519383.724527108] [rtabmap]: rtabmap: topic_queue_size = 10
+[rtabmap-7] [INFO] [1787519383.724549679] [rtabmap]: rtabmap: sync_queue_size  = 30
+[rtabmap-7] [INFO] [1787519383.724558833] [rtabmap]: rtabmap: qos_image       = 2
+[rtabmap-7] [INFO] [1787519383.724567564] [rtabmap]: rtabmap: qos_camera_info = 2
+[rtabmap-7] [INFO] [1787519383.724575409] [rtabmap]: rtabmap: qos_scan        = 2
+[rtabmap-7] [INFO] [1787519383.724583547] [rtabmap]: rtabmap: qos_odom        = 0
+[rtabmap-7] [INFO] [1787519383.724618601] [rtabmap]: rtabmap: qos_user_data   = 0
+[rtabmap-7] [INFO] [1787519383.724638386] [rtabmap]: rtabmap: approx_sync     = true
+[rtabmap-7] [INFO] [1787519383.724647318] [rtabmap]: rtabmap: image_transport = raw
+[rtabmap-7] [INFO] [1787519383.724682291] [rtabmap]: rtabmap: depth_transport = raw
+[rtabmap-7] [INFO] [1787519383.724750619] [rtabmap]: Setup depth callback
+[rtabmap-7] [INFO] [1787519383.742438487] [rtabmap]: 
+[rtabmap-7] rtabmap subscribed to (approx sync):
+[rtabmap-7]    /camera/color/image_raw \
+[rtabmap-7]    /camera/color/depth/image_raw \
+[rtabmap-7]    /camera/color/camera_info \
+[rtabmap-7]    /rslidar_points
+[spawn_entity.py-5] [INFO] [1787519385.097257978] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [go2]
+[gzserver-1] [0m[1;31m[0m[1;31m[0m[INFO] [1787519385.240522979] [planar_move]: Subscribed to [/cmd_vel]
+[gzserver-1] [INFO] [1787519385.247025438] [planar_move]: Advertise odometry on [/odom]
+[icp_odometry-6] [INFO] [1787519385.414162979] [icp_odometry]: Odom: ratio=0.000000, std dev=99.995000m|99.995000rad, update time=0.001924s delay=-7.456000s
+[INFO] [spawn_entity.py-5]: process has finished cleanly [pid 2926]
+[icp_odometry-6] [INFO] [1787519385.860115100] [icp_odometry]: Odom: ratio=0.676575, std dev=0.005567m|0.001761rad, update time=0.021021s delay=-0.060000s
+[rtabmap-7] [WARN] [1787519386.058747227] [rtabmap]: We are receiving imu data (buffer=34), but cannot interpolate imu transform at time 7.456000 (latest imu received with stamp 7.860000). IMU won't be added to graph.
+[rtabmap-7] [INFO] [1787519386.137784599] [rtabmap]: rtabmap (1): Rate=1.00s, Limit=0.000s, Conversion=0.0082s, RTAB-Map=0.0782s, Maps update=0.0003s pub=0.0001s delay=0.3440s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519386.320997471] [icp_odometry]: Odom: ratio=0.675364, std dev=0.004897m|0.001549rad, update time=0.017088s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519386.784625426] [icp_odometry]: Odom: ratio=0.693992, std dev=0.004820m|0.001524rad, update time=0.018573s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519387.225624951] [icp_odometry]: Odom: ratio=0.730640, std dev=0.005676m|0.001795rad, update time=0.013881s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519387.678828491] [icp_odometry]: Odom: ratio=0.739099, std dev=0.004641m|0.001468rad, update time=0.017925s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519387.831397873] [rtabmap]: rtabmap (2): Rate=1.00s, Limit=0.000s, Conversion=0.0020s, RTAB-Map=0.0480s, Maps update=0.0002s pub=0.0000s delay=0.1400s (local map=1, WM=1)
+[rtabmap-7] [33m[ WARN] (2026-08-23 23:09:46.058) Transform.cpp:584::getTransform() No transform found for stamp 7.456000! Earliest is 7.464000[0m
+[rtabmap-7] [33m[ WARN] (2026-08-23 23:09:46.089) Memory.cpp:6380::createSignature() Mem/SaveDepth16Format is set to false to use 32bits format but this is not compatible with the compressed depth format chosen (Mem/DepthCompressionFormat=".rvl"), depth images will be compressed in ".png" format instead. Explicitly set Mem/SaveDepth16Format to true to keep using ".rvl" format and images will be converted to 16bits for convenience (warning: that would remove all depth values over 65 meters). Explicitly set Mem/DepthCompressionFormat=".png" to suppress this warning. This warning is only printed once.[0m
+[icp_odometry-6] [INFO] [1787519388.145762384] [icp_odometry]: Odom: ratio=0.735271, std dev=0.004431m|0.001401rad, update time=0.030923s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519388.671564894] [icp_odometry]: Odom: ratio=0.777953, std dev=0.003783m|0.001196rad, update time=0.018577s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519389.130308489] [icp_odometry]: Odom: ratio=0.790916, std dev=0.003746m|0.001184rad, update time=0.016798s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519389.587587705] [icp_odometry]: Odom: ratio=0.795741, std dev=0.003824m|0.001209rad, update time=0.014649s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519390.026271150] [icp_odometry]: Odom: ratio=0.770621, std dev=0.003643m|0.001152rad, update time=0.015316s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519390.191594947] [rtabmap]: rtabmap (3): Rate=1.00s, Limit=0.000s, Conversion=0.0034s, RTAB-Map=0.0517s, Maps update=0.0001s pub=0.0000s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519390.481685035] [icp_odometry]: Odom: ratio=0.763015, std dev=0.004450m|0.001407rad, update time=0.014743s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519390.939814033] [icp_odometry]: Odom: ratio=0.776119, std dev=0.004348m|0.001375rad, update time=0.012899s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519391.398263807] [icp_odometry]: Odom: ratio=0.771875, std dev=0.004320m|0.001366rad, update time=0.016790s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519391.849034446] [icp_odometry]: Odom: ratio=0.777952, std dev=0.004373m|0.001383rad, update time=0.017465s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519392.299329924] [icp_odometry]: Odom: ratio=0.759653, std dev=0.004986m|0.001577rad, update time=0.015357s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519392.482090880] [rtabmap]: rtabmap (4): Rate=1.00s, Limit=0.000s, Conversion=0.0013s, RTAB-Map=0.0525s, Maps update=0.0001s pub=0.0000s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519392.734981956] [icp_odometry]: Odom: ratio=0.760343, std dev=0.004990m|0.001578rad, update time=0.013523s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519393.176782710] [icp_odometry]: Odom: ratio=0.754524, std dev=0.005000m|0.001581rad, update time=0.014317s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519393.598801941] [icp_odometry]: Odom: ratio=0.762392, std dev=0.004829m|0.001527rad, update time=0.013732s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519394.019011610] [icp_odometry]: Odom: ratio=0.772262, std dev=0.004688m|0.001482rad, update time=0.014015s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519394.470087052] [icp_odometry]: Odom: ratio=0.764890, std dev=0.005497m|0.001738rad, update time=0.016460s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519394.625441637] [rtabmap]: rtabmap (5): Rate=1.00s, Limit=0.000s, Conversion=0.0009s, RTAB-Map=0.0486s, Maps update=0.0001s pub=0.0000s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519394.900232937] [icp_odometry]: Odom: ratio=0.717989, std dev=0.005640m|0.001783rad, update time=0.014044s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519395.322386319] [icp_odometry]: Odom: ratio=0.754137, std dev=0.005514m|0.001744rad, update time=0.012492s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519395.768502897] [icp_odometry]: Odom: ratio=0.750979, std dev=0.005732m|0.001813rad, update time=0.013961s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519396.219355076] [icp_odometry]: Odom: ratio=0.762392, std dev=0.005743m|0.001816rad, update time=0.013873s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519396.659456870] [icp_odometry]: Odom: ratio=0.734694, std dev=0.005459m|0.001726rad, update time=0.012917s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519396.804989744] [rtabmap]: rtabmap (6): Rate=1.00s, Limit=0.000s, Conversion=0.0049s, RTAB-Map=0.0387s, Maps update=0.0001s pub=0.0000s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519397.087088458] [icp_odometry]: Odom: ratio=0.760731, std dev=0.005565m|0.001760rad, update time=0.011578s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519397.508357006] [icp_odometry]: Odom: ratio=0.749216, std dev=0.005759m|0.001821rad, update time=0.012387s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519397.936454970] [icp_odometry]: Odom: ratio=0.737872, std dev=0.006053m|0.001914rad, update time=0.013227s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519398.376853770] [icp_odometry]: Odom: ratio=0.729118, std dev=0.006362m|0.002012rad, update time=0.013110s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519398.805331431] [icp_odometry]: Odom: ratio=0.734485, std dev=0.006431m|0.002034rad, update time=0.014490s delay=-0.060000s
+[WARNING] [launch_ros.actions.node]: Parameter file path is not a file: .
+[WARNING] [launch_ros.actions.node]: Parameter file path is not a file: .
+[WARNING] [launch_ros.actions.node]: Parameter file path is not a file: .
+[WARNING] [launch_ros.actions.node]: Parameter file path is not a file: .
+[WARNING] [launch_ros.actions.node]: Parameter file path is not a file: .
+[WARNING] [launch_ros.actions.node]: Parameter file path is not a file: .
+[WARNING] [launch_ros.actions.node]: Parameter file path is not a file: .
+[rtabmap-7] [INFO] [1787519398.962689787] [rtabmap]: rtabmap (7): Rate=1.00s, Limit=0.000s, Conversion=0.0017s, RTAB-Map=0.0453s, Maps update=0.0001s pub=0.0000s delay=0.1400s (local map=1, WM=1)
+[INFO] [controller_server-8]: process started with pid [3153]
+[INFO] [smoother_server-9]: process started with pid [3155]
+[INFO] [planner_server-10]: process started with pid [3157]
+[INFO] [behavior_server-11]: process started with pid [3159]
+[INFO] [bt_navigator-12]: process started with pid [3161]
+[INFO] [waypoint_follower-13]: process started with pid [3163]
+[INFO] [velocity_smoother-14]: process started with pid [3165]
+[INFO] [lifecycle_manager-15]: process started with pid [3167]
+[lifecycle_manager-15] [INFO] [1787519399.076059798] [lifecycle_manager_navigation]: Creating
+[controller_server-8] [INFO] [1787519399.103112206] [controller_server]: 
+[controller_server-8] 	controller_server lifecycle node launched. 
+[controller_server-8] 	Waiting on external lifecycle transitions to activate
+[controller_server-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-8] [INFO] [1787519399.115010676] [controller_server]: Creating controller server
+[lifecycle_manager-15] [INFO] [1787519399.119292532] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[velocity_smoother-14] [INFO] [1787519399.119542216] [velocity_smoother]: 
+[velocity_smoother-14] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-14] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-14] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-13] [INFO] [1787519399.144992997] [waypoint_follower]: 
+[waypoint_follower-13] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-13] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-13] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-10] [INFO] [1787519399.156104616] [planner_server]: 
+[planner_server-10] 	planner_server lifecycle node launched. 
+[planner_server-10] 	Waiting on external lifecycle transitions to activate
+[planner_server-10] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-10] [INFO] [1787519399.158909487] [planner_server]: Creating
+[waypoint_follower-13] [INFO] [1787519399.159676927] [waypoint_follower]: Creating
+[smoother_server-9] [INFO] [1787519399.160042403] [smoother_server]: 
+[smoother_server-9] 	smoother_server lifecycle node launched. 
+[smoother_server-9] 	Waiting on external lifecycle transitions to activate
+[smoother_server-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-9] [INFO] [1787519399.173615088] [smoother_server]: Creating smoother server
+[controller_server-8] [INFO] [1787519399.178958218] [local_costmap.local_costmap]: 
+[controller_server-8] 	local_costmap lifecycle node launched. 
+[controller_server-8] 	Waiting on external lifecycle transitions to activate
+[controller_server-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-8] [INFO] [1787519399.182823734] [local_costmap.local_costmap]: Creating Costmap
+[planner_server-10] [INFO] [1787519399.215466623] [global_costmap.global_costmap]: 
+[planner_server-10] 	global_costmap lifecycle node launched. 
+[planner_server-10] 	Waiting on external lifecycle transitions to activate
+[planner_server-10] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-10] [INFO] [1787519399.217745722] [global_costmap.global_costmap]: Creating Costmap
+[bt_navigator-12] [INFO] [1787519399.279217713] [bt_navigator]: 
+[bt_navigator-12] 	bt_navigator lifecycle node launched. 
+[bt_navigator-12] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-12] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-12] [INFO] [1787519399.279498640] [bt_navigator]: Creating
+[behavior_server-11] [INFO] [1787519399.310917474] [behavior_server]: 
+[behavior_server-11] 	behavior_server lifecycle node launched. 
+[behavior_server-11] 	Waiting on external lifecycle transitions to activate
+[behavior_server-11] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-15] [INFO] [1787519399.372050792] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-15] [INFO] [1787519399.372592915] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-8] [INFO] [1787519399.374242698] [controller_server]: Configuring controller interface
+[controller_server-8] [INFO] [1787519399.376400704] [controller_server]: getting goal checker plugins..
+[controller_server-8] [INFO] [1787519399.378763408] [controller_server]: Controller frequency set to 20.0000Hz
+[controller_server-8] [INFO] [1787519399.378875639] [local_costmap.local_costmap]: Configuring
+[controller_server-8] [INFO] [1787519399.392105766] [local_costmap.local_costmap]: Using plugin "static_layer"
+[controller_server-8] [INFO] [1787519399.406538488] [local_costmap.local_costmap]: Subscribing to the map topic (/map) with transient local durability
+[controller_server-8] [INFO] [1787519399.409275771] [local_costmap.local_costmap]: Initialized plugin "static_layer"
+[controller_server-8] [INFO] [1787519399.409340459] [local_costmap.local_costmap]: Using plugin "obstacle_layer"
+[controller_server-8] [INFO] [1787519399.413028917] [local_costmap.local_costmap]: Subscribed to Topics: 
+[controller_server-8] [INFO] [1787519399.413182534] [local_costmap.local_costmap]: Initialized plugin "obstacle_layer"
+[controller_server-8] [INFO] [1787519399.413194666] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-8] [INFO] [1787519399.414046270] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[controller_server-8] [INFO] [1787519399.437028822] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-8] [INFO] [1787519399.440212202] [controller_server]: Created goal checker : goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-8] [INFO] [1787519399.440946052] [controller_server]: Controller Server has goal_checker  goal checkers available.
+[controller_server-8] [INFO] [1787519399.453477330] [controller_server]: Created controller : FollowPath of type dwb_core::DWBLocalPlanner
+[controller_server-8] [INFO] [1787519399.455692655] [controller_server]: Setting transform_tolerance to 0.100000
+[icp_odometry-6] [INFO] [1787519399.471021845] [icp_odometry]: Odom: ratio=0.718553, std dev=0.006236m|0.001972rad, update time=0.024111s delay=0.040000s
+[controller_server-8] [ERROR] [1787519399.477082183] [controller_server]: Couldn't load critics! Caught exception: No critics defined for FollowPath
+[controller_server-8] [ERROR] [1787519399.486218756] [controller_server]: Caught exception in callback for transition 10
+[controller_server-8] [ERROR] [1787519399.486355961] [controller_server]: Original error: No critics defined for FollowPath
+[controller_server-8] [WARN] [1787519399.486408728] [controller_server]: Callback returned ERROR during the transition: configure
+[controller_server-8] [FATAL] [1787519399.486439959] [controller_server]: Lifecycle node controller_server does not have error state implemented
+[lifecycle_manager-15] [ERROR] [1787519399.487556807] [lifecycle_manager_navigation]: Failed to change state for node: controller_server
+[lifecycle_manager-15] [ERROR] [1787519399.487683164] [lifecycle_manager_navigation]: Failed to bring up all requested nodes. Aborting bringup.
+[icp_odometry-6] [INFO] [1787519399.919354258] [icp_odometry]: Odom: ratio=0.740301, std dev=0.005271m|0.001667rad, update time=0.018253s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519400.387202221] [icp_odometry]: Odom: ratio=0.719560, std dev=0.005840m|0.001847rad, update time=0.016707s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519400.829553639] [icp_odometry]: Odom: ratio=0.727843, std dev=0.005783m|0.001829rad, update time=0.016437s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519401.310920686] [icp_odometry]: Odom: ratio=0.719589, std dev=0.005827m|0.001843rad, update time=0.017376s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519401.469053239] [rtabmap]: rtabmap (8): Rate=1.00s, Limit=0.000s, Conversion=0.0013s, RTAB-Map=0.0494s, Maps update=0.0067s pub=0.0003s delay=0.1400s (local map=1, WM=1)
+[controller_server-8] [INFO] [1787519401.469342569] [local_costmap.local_costmap]: StaticLayer: Resizing costmap to 102 X 110 at 0.050000 m/pix
+[icp_odometry-6] [INFO] [1787519401.813633189] [icp_odometry]: Odom: ratio=0.713270, std dev=0.005895m|0.001864rad, update time=0.014520s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519402.276553528] [icp_odometry]: Odom: ratio=0.718750, std dev=0.006227m|0.001969rad, update time=0.015725s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519402.735910307] [icp_odometry]: Odom: ratio=0.717425, std dev=0.006476m|0.002048rad, update time=0.015377s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519403.200991464] [icp_odometry]: Odom: ratio=0.734068, std dev=0.006267m|0.001982rad, update time=0.014096s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519403.640724253] [icp_odometry]: Odom: ratio=0.717425, std dev=0.005994m|0.001896rad, update time=0.017304s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519403.795989162] [rtabmap]: rtabmap (9): Rate=1.00s, Limit=0.000s, Conversion=0.0009s, RTAB-Map=0.0462s, Maps update=0.0028s pub=0.0001s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519404.100548132] [icp_odometry]: Odom: ratio=0.735016, std dev=0.006322m|0.001999rad, update time=0.015390s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519404.550634215] [icp_odometry]: Odom: ratio=0.716430, std dev=0.006533m|0.002066rad, update time=0.016022s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519404.998377617] [icp_odometry]: Odom: ratio=0.733124, std dev=0.006501m|0.002056rad, update time=0.016793s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519405.478042702] [icp_odometry]: Odom: ratio=0.708006, std dev=0.006411m|0.002027rad, update time=0.015017s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519405.945938193] [icp_odometry]: Odom: ratio=0.728278, std dev=0.006829m|0.002159rad, update time=0.016714s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519406.115340898] [rtabmap]: rtabmap (10): Rate=1.00s, Limit=0.000s, Conversion=0.0031s, RTAB-Map=0.0540s, Maps update=0.0045s pub=0.0001s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519406.386160708] [icp_odometry]: Odom: ratio=0.722178, std dev=0.007262m|0.002296rad, update time=0.014882s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519406.847122425] [icp_odometry]: Odom: ratio=0.720126, std dev=0.006864m|0.002171rad, update time=0.017040s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519407.298160683] [icp_odometry]: Odom: ratio=0.730408, std dev=0.006208m|0.001963rad, update time=0.014502s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519407.771436730] [icp_odometry]: Odom: ratio=0.729708, std dev=0.006509m|0.002058rad, update time=0.014751s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519408.251302076] [icp_odometry]: Odom: ratio=0.739470, std dev=0.006225m|0.001968rad, update time=0.017910s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519408.407834545] [rtabmap]: rtabmap (11): Rate=1.00s, Limit=0.000s, Conversion=0.0014s, RTAB-Map=0.0454s, Maps update=0.0037s pub=0.0001s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519408.701323104] [icp_odometry]: Odom: ratio=0.732185, std dev=0.006093m|0.001927rad, update time=0.015313s delay=-0.060000s
+[INFO] [frame_capture-16]: process started with pid [3306]
+[icp_odometry-6] [INFO] [1787519409.175553217] [icp_odometry]: Odom: ratio=0.731765, std dev=0.006159m|0.001948rad, update time=0.018941s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519409.642701446] [icp_odometry]: Odom: ratio=0.728774, std dev=0.005648m|0.001786rad, update time=0.018289s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519410.089027462] [icp_odometry]: Odom: ratio=0.739673, std dev=0.005957m|0.001884rad, update time=0.017453s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519410.566026186] [icp_odometry]: Odom: ratio=0.731250, std dev=0.005705m|0.001804rad, update time=0.015803s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519410.744805353] [rtabmap]: rtabmap (12): Rate=1.00s, Limit=0.000s, Conversion=0.0025s, RTAB-Map=0.0692s, Maps update=0.0084s pub=0.0001s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519411.042293981] [icp_odometry]: Odom: ratio=0.733594, std dev=0.005461m|0.001727rad, update time=0.020706s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519411.506107072] [icp_odometry]: Odom: ratio=0.727201, std dev=0.005244m|0.001658rad, update time=0.020924s delay=-0.060000s
+[frame_capture-16] [INFO] [1787519411.559082563] [frame_capture]: Scenario A run 1: 5 hazards, capturing at 1.0 Hz -> /mnt/c/Users/admin/Documents/Robotics/Naderi2026/unitree-go2-slam-nav2/data/runs/scenario_A/run_1/frames
+[frame_capture-16] [WARN] [1787519411.644830824] [frame_capture]: No camera frames yet.
+[icp_odometry-6] [INFO] [1787519411.992691167] [icp_odometry]: Odom: ratio=0.738039, std dev=0.005343m|0.001690rad, update time=0.018750s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519412.437752843] [icp_odometry]: Odom: ratio=0.741140, std dev=0.005551m|0.001755rad, update time=0.019210s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519412.906507544] [icp_odometry]: Odom: ratio=0.743349, std dev=0.005623m|0.001778rad, update time=0.029805s delay=0.040000s
+[rtabmap-7] [INFO] [1787519413.112881781] [rtabmap]: rtabmap (13): Rate=1.00s, Limit=0.000s, Conversion=0.0014s, RTAB-Map=0.0524s, Maps update=0.0045s pub=0.0001s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519413.366642774] [icp_odometry]: Odom: ratio=0.721617, std dev=0.005741m|0.001815rad, update time=0.021494s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519413.863282958] [icp_odometry]: Odom: ratio=0.709402, std dev=0.005697m|0.001801rad, update time=0.022171s delay=0.032000s
+[icp_odometry-6] [INFO] [1787519414.331662398] [icp_odometry]: Odom: ratio=0.720714, std dev=0.006063m|0.001917rad, update time=0.018261s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519414.740671276] [icp_odometry]: Odom: ratio=0.745696, std dev=0.005564m|0.001759rad, update time=0.019813s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519415.167805200] [icp_odometry]: Odom: ratio=0.735907, std dev=0.005846m|0.001849rad, update time=0.017200s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519415.267212425] [rtabmap]: rtabmap (14): Rate=1.00s, Limit=0.000s, Conversion=0.0013s, RTAB-Map=0.0526s, Maps update=0.0065s pub=0.0001s delay=0.0400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519415.594827098] [icp_odometry]: Odom: ratio=0.741660, std dev=0.005374m|0.001699rad, update time=0.021291s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519416.033691487] [icp_odometry]: Odom: ratio=0.722050, std dev=0.005422m|0.001715rad, update time=0.022699s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519416.488313878] [icp_odometry]: Odom: ratio=0.722525, std dev=0.005694m|0.001801rad, update time=0.023167s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519416.928623162] [icp_odometry]: Odom: ratio=0.716049, std dev=0.005271m|0.001667rad, update time=0.018286s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519417.418215609] [icp_odometry]: Odom: ratio=0.720930, std dev=0.005677m|0.001795rad, update time=0.046759s delay=0.040000s
+[rtabmap-7] [INFO] [1787519417.513514734] [rtabmap]: rtabmap (15): Rate=1.00s, Limit=0.000s, Conversion=0.0039s, RTAB-Map=0.0653s, Maps update=0.0048s pub=0.0000s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519418.046987261] [icp_odometry]: Odom: ratio=0.718507, std dev=0.005400m|0.001708rad, update time=0.039270s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519418.572089984] [icp_odometry]: Odom: ratio=0.723125, std dev=0.005064m|0.001601rad, update time=0.030932s delay=0.028000s
+[icp_odometry-6] [INFO] [1787519419.089179959] [icp_odometry]: Odom: ratio=0.716279, std dev=0.005276m|0.001668rad, update time=0.029386s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519419.583365803] [icp_odometry]: Odom: ratio=0.708558, std dev=0.005229m|0.001653rad, update time=0.028985s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519420.033411415] [icp_odometry]: Odom: ratio=0.726006, std dev=0.005038m|0.001593rad, update time=0.024127s delay=0.040000s
+[rtabmap-7] [INFO] [1787519420.144504516] [rtabmap]: rtabmap (16): Rate=1.00s, Limit=0.000s, Conversion=0.0011s, RTAB-Map=0.0560s, Maps update=0.0057s pub=0.0001s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519420.463928187] [icp_odometry]: Odom: ratio=0.731517, std dev=0.004959m|0.001568rad, update time=0.018579s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519420.871400162] [icp_odometry]: Odom: ratio=0.714617, std dev=0.005557m|0.001757rad, update time=0.015838s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519421.313189899] [icp_odometry]: Odom: ratio=0.735659, std dev=0.005337m|0.001688rad, update time=0.020264s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519421.737589425] [icp_odometry]: Odom: ratio=0.717510, std dev=0.005358m|0.001694rad, update time=0.027047s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519422.163452128] [icp_odometry]: Odom: ratio=0.722525, std dev=0.005754m|0.001820rad, update time=0.021810s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519422.304280851] [rtabmap]: rtabmap (17): Rate=1.00s, Limit=0.000s, Conversion=0.0021s, RTAB-Map=0.0867s, Maps update=0.0051s pub=0.0001s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519422.618294351] [icp_odometry]: Odom: ratio=0.732198, std dev=0.005562m|0.001759rad, update time=0.015840s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519423.045159256] [icp_odometry]: Odom: ratio=0.728827, std dev=0.005132m|0.001623rad, update time=0.021499s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519423.487670399] [icp_odometry]: Odom: ratio=0.721746, std dev=0.005172m|0.001636rad, update time=0.020875s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519423.917700374] [icp_odometry]: Odom: ratio=0.715716, std dev=0.005736m|0.001814rad, update time=0.017696s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519424.347562825] [icp_odometry]: Odom: ratio=0.700855, std dev=0.005593m|0.001769rad, update time=0.018552s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519424.445168994] [rtabmap]: rtabmap (18): Rate=1.00s, Limit=0.000s, Conversion=0.0015s, RTAB-Map=0.0451s, Maps update=0.0044s pub=0.0001s delay=0.0400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519424.758051128] [icp_odometry]: Odom: ratio=0.715830, std dev=0.005234m|0.001655rad, update time=0.016964s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519425.279953892] [icp_odometry]: Odom: ratio=0.713400, std dev=0.005153m|0.001630rad, update time=0.019572s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519425.731209035] [icp_odometry]: Odom: ratio=0.728050, std dev=0.005658m|0.001789rad, update time=0.022228s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519426.213539422] [icp_odometry]: Odom: ratio=0.710956, std dev=0.004911m|0.001553rad, update time=0.036951s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519426.666718925] [icp_odometry]: Odom: ratio=0.695988, std dev=0.004804m|0.001519rad, update time=0.017402s delay=-0.068000s
+[rtabmap-7] [INFO] [1787519426.849243690] [rtabmap]: rtabmap (19): Rate=1.00s, Limit=0.000s, Conversion=0.0011s, RTAB-Map=0.0512s, Maps update=0.0034s pub=0.0001s delay=0.1320s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519427.101943523] [icp_odometry]: Odom: ratio=0.716952, std dev=0.005490m|0.001736rad, update time=0.017808s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519427.523039653] [icp_odometry]: Odom: ratio=0.705882, std dev=0.004948m|0.001565rad, update time=0.016113s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519427.933033000] [icp_odometry]: Odom: ratio=0.716745, std dev=0.005120m|0.001619rad, update time=0.018508s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519428.400383000] [icp_odometry]: Odom: ratio=0.696690, std dev=0.004976m|0.001574rad, update time=0.014332s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519428.838055441] [icp_odometry]: Odom: ratio=0.711300, std dev=0.004914m|0.001554rad, update time=0.021350s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519429.280408241] [icp_odometry]: Odom: ratio=0.730085, std dev=0.005117m|0.001618rad, update time=0.017325s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519429.377883054] [rtabmap]: rtabmap (20): Rate=1.00s, Limit=0.000s, Conversion=0.0027s, RTAB-Map=0.0465s, Maps update=0.0061s pub=0.0001s delay=0.0400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519429.754854946] [icp_odometry]: Odom: ratio=0.713287, std dev=0.004395m|0.001390rad, update time=0.021042s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519430.192869019] [icp_odometry]: Odom: ratio=0.724864, std dev=0.004794m|0.001516rad, update time=0.015644s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519430.641645586] [icp_odometry]: Odom: ratio=0.735544, std dev=0.004768m|0.001508rad, update time=0.021350s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519431.138058751] [icp_odometry]: Odom: ratio=0.713400, std dev=0.004674m|0.001478rad, update time=0.022370s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519431.581668876] [icp_odometry]: Odom: ratio=0.716718, std dev=0.004553m|0.001440rad, update time=0.018093s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519431.685339436] [rtabmap]: rtabmap (21): Rate=1.00s, Limit=0.000s, Conversion=0.0015s, RTAB-Map=0.0550s, Maps update=0.0048s pub=0.0001s delay=0.0400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519432.041140622] [icp_odometry]: Odom: ratio=0.707336, std dev=0.004698m|0.001486rad, update time=0.030792s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519432.454961339] [icp_odometry]: Odom: ratio=0.708462, std dev=0.004622m|0.001462rad, update time=0.018524s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519432.890067734] [icp_odometry]: Odom: ratio=0.698683, std dev=0.004582m|0.001449rad, update time=0.021370s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519433.322888923] [icp_odometry]: Odom: ratio=0.692486, std dev=0.004932m|0.001560rad, update time=0.022879s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519433.749803846] [icp_odometry]: Odom: ratio=0.693436, std dev=0.004838m|0.001530rad, update time=0.018625s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519433.857491903] [rtabmap]: rtabmap (22): Rate=1.00s, Limit=0.000s, Conversion=0.0011s, RTAB-Map=0.0515s, Maps update=0.0074s pub=0.0001s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519434.196550625] [icp_odometry]: Odom: ratio=0.701931, std dev=0.004756m|0.001504rad, update time=0.018409s delay=-0.060000s
+[frame_capture-16] [INFO] [1787519434.368425058] [frame_capture]: 10 frames captured (10 unsafe / 0 safe)
+[icp_odometry-6] [INFO] [1787519434.736797065] [icp_odometry]: Odom: ratio=0.716395, std dev=0.004725m|0.001494rad, update time=0.026681s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519435.213629274] [icp_odometry]: Odom: ratio=0.692547, std dev=0.004621m|0.001461rad, update time=0.028429s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519435.697686868] [icp_odometry]: Odom: ratio=0.708594, std dev=0.004611m|0.001458rad, update time=0.036481s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519436.130218590] [icp_odometry]: Odom: ratio=0.710731, std dev=0.004416m|0.001396rad, update time=0.018592s delay=-0.064000s
+[rtabmap-7] [INFO] [1787519436.222031877] [rtabmap]: rtabmap (23): Rate=1.00s, Limit=0.000s, Conversion=0.0014s, RTAB-Map=0.0482s, Maps update=0.0037s pub=0.0001s delay=0.0360s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519436.549746176] [icp_odometry]: Odom: ratio=0.698084, std dev=0.004852m|0.001534rad, update time=0.021265s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519437.032783021] [icp_odometry]: Odom: ratio=0.696359, std dev=0.005103m|0.001614rad, update time=0.023099s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519437.535325995] [icp_odometry]: Odom: ratio=0.697134, std dev=0.004965m|0.001570rad, update time=0.031407s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519437.967953642] [icp_odometry]: Odom: ratio=0.707430, std dev=0.005063m|0.001601rad, update time=0.019925s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519438.403669982] [icp_odometry]: Odom: ratio=0.700464, std dev=0.004900m|0.001550rad, update time=0.029887s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519438.819416715] [icp_odometry]: Odom: ratio=0.707883, std dev=0.005033m|0.001592rad, update time=0.020648s delay=-0.060000s
+[rtabmap-7] [INFO] [1787519438.933193884] [rtabmap]: rtabmap (24): Rate=1.00s, Limit=0.000s, Conversion=0.0013s, RTAB-Map=0.0584s, Maps update=0.0055s pub=0.0001s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519439.253491011] [icp_odometry]: Odom: ratio=0.686154, std dev=0.004386m|0.001387rad, update time=0.017764s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519439.731913599] [icp_odometry]: Odom: ratio=0.706063, std dev=0.004917m|0.001555rad, update time=0.032726s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519440.151770654] [icp_odometry]: Odom: ratio=0.683077, std dev=0.004281m|0.001354rad, update time=0.023714s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519440.597920360] [icp_odometry]: Odom: ratio=0.700691, std dev=0.004426m|0.001400rad, update time=0.025450s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519441.026942578] [icp_odometry]: Odom: ratio=0.711077, std dev=0.004725m|0.001494rad, update time=0.021278s delay=0.040000s
+[rtabmap-7] [INFO] [1787519441.148539042] [rtabmap]: rtabmap (25): Rate=1.00s, Limit=0.000s, Conversion=0.0033s, RTAB-Map=0.0661s, Maps update=0.0048s pub=0.0001s delay=0.1400s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519441.470674537] [icp_odometry]: Odom: ratio=0.712963, std dev=0.004704m|0.001488rad, update time=0.021003s delay=0.040000s
+[icp_odometry-6] [INFO] [1787519441.886421509] [icp_odometry]: Odom: ratio=0.709677, std dev=0.004955m|0.001567rad, update time=0.017915s delay=-0.060000s
+[icp_odometry-6] [INFO] [1787519442.317411055] [icp_odometry]: Odom: ratio=0.711969, std dev=0.005194m|0.001643rad, update time=0.021684s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519442.785295633] [icp_odometry]: Odom: ratio=0.693069, std dev=0.004803m|0.001519rad, update time=0.034882s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519443.199926160] [icp_odometry]: Odom: ratio=0.713738, std dev=0.004729m|0.001496rad, update time=0.016995s delay=-0.064000s
+[rtabmap-7] [INFO] [1787519443.293643853] [rtabmap]: rtabmap (26): Rate=1.00s, Limit=0.000s, Conversion=0.0020s, RTAB-Map=0.0439s, Maps update=0.0049s pub=0.0001s delay=0.0360s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519443.644958897] [icp_odometry]: Odom: ratio=0.716040, std dev=0.004987m|0.001577rad, update time=0.023080s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519444.077262717] [icp_odometry]: Odom: ratio=0.691367, std dev=0.004629m|0.001464rad, update time=0.021494s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519444.504895978] [icp_odometry]: Odom: ratio=0.702910, std dev=0.004518m|0.001429rad, update time=0.015512s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519444.936876181] [icp_odometry]: Odom: ratio=0.699774, std dev=0.004836m|0.001529rad, update time=0.021274s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519445.367836956] [icp_odometry]: Odom: ratio=0.706605, std dev=0.004589m|0.001451rad, update time=0.018248s delay=0.036000s
+[rtabmap-7] [INFO] [1787519445.475747840] [rtabmap]: rtabmap (27): Rate=1.00s, Limit=0.000s, Conversion=0.0014s, RTAB-Map=0.0596s, Maps update=0.0071s pub=0.0001s delay=0.1360s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519445.798420892] [icp_odometry]: Odom: ratio=0.707447, std dev=0.004809m|0.001521rad, update time=0.016320s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519446.222360982] [icp_odometry]: Odom: ratio=0.693878, std dev=0.004932m|0.001560rad, update time=0.017334s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519446.649591238] [icp_odometry]: Odom: ratio=0.704043, std dev=0.004726m|0.001495rad, update time=0.021411s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519447.103470928] [icp_odometry]: Odom: ratio=0.686601, std dev=0.004616m|0.001460rad, update time=0.030481s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519447.524372565] [icp_odometry]: Odom: ratio=0.693659, std dev=0.005099m|0.001612rad, update time=0.016407s delay=-0.064000s
+[rtabmap-7] [INFO] [1787519447.628776326] [rtabmap]: rtabmap (28): Rate=1.00s, Limit=0.000s, Conversion=0.0011s, RTAB-Map=0.0575s, Maps update=0.0054s pub=0.0001s delay=0.1360s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519447.960597170] [icp_odometry]: Odom: ratio=0.692308, std dev=0.004701m|0.001487rad, update time=0.025276s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519448.386539480] [icp_odometry]: Odom: ratio=0.685213, std dev=0.004753m|0.001503rad, update time=0.025367s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519448.848157867] [icp_odometry]: Odom: ratio=0.691199, std dev=0.004135m|0.001308rad, update time=0.019177s delay=0.032000s
+[icp_odometry-6] [INFO] [1787519449.271356818] [icp_odometry]: Odom: ratio=0.697269, std dev=0.004963m|0.001570rad, update time=0.023968s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519449.697995229] [icp_odometry]: Odom: ratio=0.695719, std dev=0.004468m|0.001413rad, update time=0.016856s delay=-0.064000s
+[rtabmap-7] [INFO] [1787519449.797989928] [rtabmap]: rtabmap (29): Rate=1.00s, Limit=0.000s, Conversion=0.0018s, RTAB-Map=0.0522s, Maps update=0.0043s pub=0.0001s delay=0.0360s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519450.141957979] [icp_odometry]: Odom: ratio=0.668185, std dev=0.004246m|0.001343rad, update time=0.022915s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519450.557268427] [icp_odometry]: Odom: ratio=0.709382, std dev=0.004318m|0.001365rad, update time=0.018352s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519450.973417146] [icp_odometry]: Odom: ratio=0.723290, std dev=0.004166m|0.001318rad, update time=0.015874s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519451.399223937] [icp_odometry]: Odom: ratio=0.709454, std dev=0.004361m|0.001379rad, update time=0.021405s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519451.812490072] [icp_odometry]: Odom: ratio=0.704580, std dev=0.004391m|0.001389rad, update time=0.015861s delay=-0.064000s
+[rtabmap-7] [INFO] [1787519451.897156887] [rtabmap]: rtabmap (30): Rate=1.00s, Limit=0.000s, Conversion=0.0021s, RTAB-Map=0.0416s, Maps update=0.0034s pub=0.0001s delay=0.0360s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519452.240256917] [icp_odometry]: Odom: ratio=0.688488, std dev=0.004948m|0.001565rad, update time=0.023788s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519452.657939185] [icp_odometry]: Odom: ratio=0.693242, std dev=0.004435m|0.001402rad, update time=0.020765s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519453.096483750] [icp_odometry]: Odom: ratio=0.704632, std dev=0.004451m|0.001408rad, update time=0.022718s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519453.492080076] [icp_odometry]: Odom: ratio=0.699774, std dev=0.004816m|0.001523rad, update time=0.015060s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519453.899781783] [icp_odometry]: Odom: ratio=0.716909, std dev=0.004544m|0.001437rad, update time=0.013464s delay=-0.064000s
+[rtabmap-7] [INFO] [1787519453.998902297] [rtabmap]: rtabmap (31): Rate=1.00s, Limit=0.000s, Conversion=0.0014s, RTAB-Map=0.0531s, Maps update=0.0030s pub=0.0001s delay=0.0360s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519454.316670204] [icp_odometry]: Odom: ratio=0.709726, std dev=0.004535m|0.001434rad, update time=0.016137s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519454.723126827] [icp_odometry]: Odom: ratio=0.703957, std dev=0.004514m|0.001427rad, update time=0.013635s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519455.139153090] [icp_odometry]: Odom: ratio=0.704354, std dev=0.004474m|0.001415rad, update time=0.016101s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519455.548716347] [icp_odometry]: Odom: ratio=0.706987, std dev=0.004471m|0.001414rad, update time=0.017073s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519456.100250737] [icp_odometry]: Odom: ratio=0.684290, std dev=0.004840m|0.001531rad, update time=0.040055s delay=0.036000s
+[rtabmap-7] [INFO] [1787519456.276705867] [rtabmap]: rtabmap (32): Rate=1.00s, Limit=0.000s, Conversion=0.0017s, RTAB-Map=0.0848s, Maps update=0.0042s pub=0.0001s delay=0.1360s (local map=1, WM=1)
+[frame_capture-16] [INFO] [1787519456.308789572] [frame_capture]: 20 frames captured (20 unsafe / 0 safe)
+[icp_odometry-6] [INFO] [1787519456.788824782] [icp_odometry]: Odom: ratio=0.676737, std dev=0.004571m|0.001445rad, update time=0.041507s delay=0.032000s
+[icp_odometry-6] [INFO] [1787519457.346708435] [icp_odometry]: Odom: ratio=0.690152, std dev=0.004287m|0.001356rad, update time=0.027481s delay=0.032000s
+[icp_odometry-6] [INFO] [1787519457.897554530] [icp_odometry]: Odom: ratio=0.673946, std dev=0.004842m|0.001531rad, update time=0.028392s delay=0.032000s
+[icp_odometry-6] [INFO] [1787519458.410955470] [icp_odometry]: Odom: ratio=0.687358, std dev=0.004852m|0.001534rad, update time=0.036039s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519458.893739266] [icp_odometry]: Odom: ratio=0.695915, std dev=0.004926m|0.001558rad, update time=0.021599s delay=0.036000s
+[rtabmap-7] [INFO] [1787519458.990728105] [rtabmap]: rtabmap (33): Rate=1.00s, Limit=0.000s, Conversion=0.0011s, RTAB-Map=0.0553s, Maps update=0.0081s pub=0.0001s delay=0.1360s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519459.381972564] [icp_odometry]: Odom: ratio=0.694889, std dev=0.004873m|0.001541rad, update time=0.033252s delay=0.032000s
+[icp_odometry-6] [INFO] [1787519459.795615998] [icp_odometry]: Odom: ratio=0.682059, std dev=0.004720m|0.001493rad, update time=0.015200s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519460.247194755] [icp_odometry]: Odom: ratio=0.688164, std dev=0.004874m|0.001541rad, update time=0.025973s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519460.671505816] [icp_odometry]: Odom: ratio=0.686738, std dev=0.004633m|0.001465rad, update time=0.024753s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519461.095790955] [icp_odometry]: Odom: ratio=0.689158, std dev=0.004381m|0.001385rad, update time=0.022380s delay=0.036000s
+[rtabmap-7] [INFO] [1787519461.197700669] [rtabmap]: rtabmap (34): Rate=1.00s, Limit=0.000s, Conversion=0.0012s, RTAB-Map=0.0564s, Maps update=0.0051s pub=0.0001s delay=0.1360s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519461.602808201] [icp_odometry]: Odom: ratio=0.695122, std dev=0.004710m|0.001489rad, update time=0.029226s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519462.133881450] [icp_odometry]: Odom: ratio=0.690977, std dev=0.004374m|0.001383rad, update time=0.034009s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519462.565388794] [icp_odometry]: Odom: ratio=0.706605, std dev=0.004747m|0.001501rad, update time=0.020011s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519463.000734741] [icp_odometry]: Odom: ratio=0.706150, std dev=0.004638m|0.001467rad, update time=0.021495s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519463.447129699] [icp_odometry]: Odom: ratio=0.696715, std dev=0.004936m|0.001561rad, update time=0.020072s delay=0.036000s
+[rtabmap-7] [INFO] [1787519463.553742140] [rtabmap]: rtabmap (35): Rate=1.00s, Limit=0.000s, Conversion=0.0021s, RTAB-Map=0.0593s, Maps update=0.0049s pub=0.0001s delay=0.1360s (local map=1, WM=1)
+[icp_odometry-6] [INFO] [1787519463.882581089] [icp_odometry]: Odom: ratio=0.687642, std dev=0.004701m|0.001487rad, update time=0.017620s delay=-0.064000s
+[icp_odometry-6] [INFO] [1787519464.333916609] [icp_odometry]: Odom: ratio=0.677542, std dev=0.005236m|0.001656rad, update time=0.022953s delay=0.036000s
+[icp_odometry-6] [INFO] [1787519464.830997805] [icp_odometry]: Odom: ratio=0.707224, std dev=0.004810m|0.001521rad, update time=0.061915s delay=0.036000s

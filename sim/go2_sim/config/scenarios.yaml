@@ -1,0 +1,232 @@
+# =============================================================================
+# Scenario definitions - reproduction of Table 1 in Naderi et al. (2026),
+# "Autonomous Construction-Site Safety Inspection Using Mobile Robots".
+#
+# This file is the SINGLE SOURCE OF TRUTH for:
+#   1. Gazebo world generation      (scripts/generate_worlds.py)
+#   2. The robot's inspection route (go2_sim/waypoint_mission.py)
+#   3. Ground-truth safe/unsafe labels used to score the AI pipeline
+#      (pipeline/evaluate.py)
+#
+# Note on counts: the paper's prose says "scenario A=5, scenario B=6,
+# scenario C=7", but Table 1 itself enumerates A1-A5, B1-B7 and C1-C8. We
+# follow the table, which is the explicit enumeration: A=5, B=7, C=8.
+#
+# Coordinates are metres in the world frame. The lab is a 12 x 9 m enclosed
+# space, matching the scale of the paper's research-lab setting.
+# =============================================================================
+
+lab:
+  size_x: 12.0
+  size_y: 9.0
+  wall_height: 2.5
+  wall_thickness: 0.15
+
+# Complexity ramps A -> B -> C exactly as described in Section 5: the number of
+# violations rises while the number of assisting safety signs falls, and the
+# violations themselves shift toward configurations that are less common in
+# web-scale training data.
+scenarios:
+
+  A:
+    description: >
+      Baseline scenario. Five violations drawn from the OSHA Focus Four, with
+      three assisting safety signs present to give the VLM textual cues.
+    signs:
+      - {id: SGN_A1, text: "DANGER - FALL HAZARD",                              pose: [3.0, 2.2, 1.6, 0, 0, 1.5708]}
+      - {id: SGN_A2, text: "CAUTION - HI-VIS SAFETY VEST REQUIRED BEYOND THIS POINT", pose: [6.0, 4.4, 1.6, 0, 0, 3.1416]}
+      - {id: SGN_A3, text: "CAUTION - ALL PPE REQUIRED BEYOND THIS POINT",      pose: [9.0, 2.2, 1.6, 0, 0, 3.1416]}
+    hazards:
+      - id: A1
+        category: "Falls / Struck-By / Caught-Between"
+        violation: "Ladder placed where it can be displaced by adjacent equipment; not secured"
+        osha_subpart: "Ladders (Subpart X)"
+        osha_ref: "1926.1053"
+        props: [ladder_leaning, forklift]
+        pose: [2.6, 1.6, 0.0, 0, 0, 0.35]
+      - id: A2
+        category: "Trip hazards"
+        violation: "Bricks/debris scattered in walkways"
+        osha_subpart: "Housekeeping (Subpart C)"
+        osha_ref: "1926.25(a)"
+        props: [brick_scatter]
+        pose: [4.8, 3.0, 0.0, 0, 0, 0.0]
+      - id: A3
+        category: "PPE"
+        violation: "No high-visibility vest and no head protection while exposed to fall hazards"
+        osha_subpart: "PPE (Subpart E)"
+        osha_ref: "1926.100(a)"
+        props: [worker_no_ppe, ppe_on_floor]
+        pose: [6.4, 4.6, 0.0, 0, 0, 1.9]
+      - id: A4
+        category: "Electrocutions"
+        violation: "Extension cord in wet area without GFCI protection"
+        osha_subpart: "Electrical (Subpart K)"
+        osha_ref: "1926.404(b)"
+        props: [water_puddle, extension_cord]
+        pose: [9.2, 2.4, 0.0, 0, 0, 0.0]
+      - id: A5
+        category: "Electrocutions"
+        violation: "Flexible cord routed through water / subject to damage"
+        osha_subpart: "Electrical (Subpart K)"
+        osha_ref: "1926.405(a)(2); 1926.405(j)(1)"
+        props: [flexible_cord, water_puddle]
+        pose: [9.6, 5.8, 0.0, 0, 0, 0.6]
+    # The route deliberately includes clean stretches so that genuinely safe
+    # frames exist; without them precision and specificity are unmeasurable.
+    waypoints:
+      - [1.2, 1.2, 0.0]
+      - [3.4, 2.6, 0.7]
+      - [5.4, 3.4, 0.4]
+      - [7.0, 5.0, 1.2]
+      - [8.6, 3.4, -0.5]
+      - [10.0, 2.6, 0.2]
+      - [10.2, 5.4, 1.4]
+      - [6.0, 7.2, 3.0]
+      - [1.5, 6.6, 3.1]
+
+  B:
+    description: >
+      Seven violations. Only the hi-vis-vest sign remains, and the hazard
+      configurations are less canonical: a ladder leaned against a machine
+      rather than a wall, and material stored on raised forklift forks. PPE is
+      partially worn (vest yes, hard hat no) rather than wholly absent.
+    signs:
+      - {id: SGN_B1, text: "CAUTION - HI-VIS SAFETY VEST REQUIRED BEYOND THIS POINT", pose: [6.0, 4.4, 1.6, 0, 0, 3.1416]}
+    hazards:
+      - id: B1
+        category: "Falls / Struck-By / Caught-Between"
+        violation: "Portable ladder leaned on a machine (unstable/unsuitable support)"
+        osha_subpart: "Ladders (Subpart X)"
+        osha_ref: "1926.1053"
+        props: [ladder_on_machine, machine_block]
+        pose: [2.8, 2.0, 0.0, 0, 0, 0.2]
+      - id: B2
+        category: "PPE"
+        violation: "No head protection while on ladder / under overhead hazards"
+        osha_subpart: "PPE (Subpart E)"
+        osha_ref: "1926.100(a)"
+        props: [worker_vest_no_hardhat]
+        pose: [3.1, 2.4, 0.0, 0, 0, 0.2]
+      - id: B3
+        category: "Trip hazard"
+        violation: "Bricks cluttered in a spot creating trip hazard"
+        osha_subpart: "Housekeeping (Subpart C)"
+        osha_ref: "1926.25(a)"
+        props: [brick_pile]
+        pose: [5.0, 3.2, 0.0, 0, 0, 0.0]
+      - id: B4
+        category: "Struck-by / Materials handling"
+        violation: "Bricks stored on forklift forks with load elevated/unattended"
+        osha_subpart: "Materials handling (Subpart H)"
+        osha_ref: "1926.600(a)(3); 1926.602(c)(1)"
+        props: [forklift_raised_load]
+        pose: [7.2, 5.2, 0.0, 0, 0, 2.2]
+      - id: B5
+        category: "Trip hazard / Material handling"
+        violation: "Bricks stacked in the middle of a walkway (aisles not kept clear)"
+        osha_subpart: "Materials handling (Subpart H)"
+        osha_ref: "1926.602(c)(1)"
+        props: [brick_stack_walkway]
+        pose: [8.8, 3.6, 0.0, 0, 0, 0.0]
+      - id: B6
+        category: "Electrocutions"
+        violation: "Extension cord in wet area without GFCI protection"
+        osha_subpart: "Electrical (Subpart K)"
+        osha_ref: "1926.404(b)"
+        props: [water_puddle, extension_cord]
+        pose: [9.6, 2.2, 0.0, 0, 0, 0.0]
+      - id: B7
+        category: "Electrocutions"
+        violation: "Flexible cord routed through water / subject to damage"
+        osha_subpart: "Electrical (Subpart K)"
+        osha_ref: "1926.405(a)(2); 1926.405(j)(1)"
+        props: [flexible_cord, water_puddle]
+        pose: [10.0, 5.6, 0.0, 0, 0, 0.8]
+    waypoints:
+      - [1.2, 1.2, 0.0]
+      - [3.6, 2.8, 0.6]
+      - [5.6, 3.6, 0.3]
+      - [7.4, 5.6, 1.1]
+      - [9.0, 4.0, -0.7]
+      - [10.2, 2.4, 0.1]
+      - [10.4, 5.2, 1.5]
+      - [6.0, 7.2, 3.0]
+      - [1.5, 6.6, 3.1]
+
+  C:
+    description: >
+      Eight violations, the hardest setting. PPE violations are dropped (too
+      easy) in favour of elevated work on unprotected machinery and misuse of a
+      material lift to raise a person. Clutter, material placement and
+      electrical hazards carry over from B, producing overlapping hazards in a
+      single frame.
+    signs:
+      - {id: SGN_C1, text: "CAUTION - HI-VIS SAFETY VEST REQUIRED BEYOND THIS POINT", pose: [6.0, 4.4, 1.6, 0, 0, 3.1416]}
+    hazards:
+      - id: C1
+        category: "Falls / Struck-By / Caught-Between"
+        violation: "Working atop large machine with unprotected sides/edges (6 ft)"
+        osha_subpart: "Fall protection (Subpart M)"
+        osha_ref: "1926.501(b)(1)"
+        props: [large_machine, worker_on_machine]
+        pose: [3.0, 2.2, 0.0, 0, 0, 0.0]
+      - id: C2
+        category: "Falls / Struck-By"
+        violation: "Using a material lift table to elevate a person (not designed/approved for personnel)"
+        osha_subpart: "Hoists/material lifts (Subpart N)"
+        osha_ref: "1926.552(b)(1)"
+        props: [lift_table, worker_on_lift]
+        pose: [5.2, 5.4, 0.0, 0, 0, 1.2]
+      - id: C3
+        category: "Falls / Struck-By"
+        violation: "Elevated work accessed without proper ladder/stair/approved platform"
+        osha_subpart: "Access (Subpart X)"
+        osha_ref: "1926.1051(a)"
+        props: [stacked_crates_as_step]
+        pose: [3.4, 2.9, 0.0, 0, 0, 0.0]
+      - id: C4
+        category: "Falls / Struck-By / Trip hazards"
+        violation: "Bricks placed on lift platform near feet (sliding/falling object/trip hazard)"
+        osha_subpart: "Materials handling & storage (Subpart H)"
+        osha_ref: "1926.250(a)(1)"
+        props: [bricks_on_platform]
+        pose: [5.4, 5.6, 0.0, 0, 0, 1.2]
+      - id: C5
+        category: "Struck-by / Materials handling"
+        violation: "Bricks stored on forklift forks with load elevated/unattended"
+        osha_subpart: "Materials handling (Subpart H)"
+        osha_ref: "1926.600(a)(3); 1926.602(c)(1)"
+        props: [forklift_raised_load]
+        pose: [7.6, 5.0, 0.0, 0, 0, 2.4]
+      - id: C6
+        category: "Trip hazard / Material handling"
+        violation: "Bricks stacked in the middle of a walkway (aisles not kept clear)"
+        osha_subpart: "Materials handling (Subpart H)"
+        osha_ref: "1926.602(c)(1)"
+        props: [brick_stack_walkway]
+        pose: [8.8, 3.4, 0.0, 0, 0, 0.0]
+      - id: C7
+        category: "Electrocutions"
+        violation: "Extension cord in wet area without GFCI protection"
+        osha_subpart: "Electrical (Subpart K)"
+        osha_ref: "1926.404(b)"
+        props: [water_puddle, extension_cord]
+        pose: [9.8, 2.2, 0.0, 0, 0, 0.0]
+      - id: C8
+        category: "Electrocutions"
+        violation: "Flexible cord routed through water / subject to damage"
+        osha_subpart: "Electrical (Subpart K)"
+        osha_ref: "1926.405(a)(2); 1926.405(j)(1)"
+        props: [flexible_cord, water_puddle]
+        pose: [10.2, 5.6, 0.0, 0, 0, 0.9]
+    waypoints:
+      - [1.2, 1.2, 0.0]
+      - [3.8, 2.8, 0.5]
+      - [5.6, 5.2, 1.0]
+      - [7.8, 5.4, 0.2]
+      - [9.2, 3.6, -0.8]
+      - [10.4, 2.4, 0.2]
+      - [10.6, 5.4, 1.5]
+      - [6.0, 7.4, 3.0]
+      - [1.5, 6.8, 3.1]

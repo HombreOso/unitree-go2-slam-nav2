@@ -1,0 +1,5 @@
+﻿[2026-08-23 22:28:09] Enabling Windows optional features (WSL + VirtualMachinePlatform).
+[2026-08-23 22:28:28] Installing WSL2 with Ubuntu 22.04 (ROS 2 Humble target distro).
+[2026-08-23 22:29:21] Updating the WSL kernel.
+[2026-08-23 22:29:21] DONE. A REBOOT IS REQUIRED before WSL can be used.
+[2026-08-23 22:29:21] After rebooting, run:  powershell -ExecutionPolicy Bypass -File scripts\setup_ros2.ps1

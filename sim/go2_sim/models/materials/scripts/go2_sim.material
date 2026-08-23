@@ -1,0 +1,85 @@
+material Go2Sim/SGN_A1
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      texture_unit
+      {
+        texture SGN_A1.png
+        filtering trilinear
+      }
+    }
+  }
+}
+
+material Go2Sim/SGN_A2
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      texture_unit
+      {
+        texture SGN_A2.png
+        filtering trilinear
+      }
+    }
+  }
+}
+
+material Go2Sim/SGN_A3
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      texture_unit
+      {
+        texture SGN_A3.png
+        filtering trilinear
+      }
+    }
+  }
+}
+
+material Go2Sim/SGN_B1
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      texture_unit
+      {
+        texture SGN_B1.png
+        filtering trilinear
+      }
+    }
+  }
+}
+
+material Go2Sim/SGN_C1
+{
+  technique
+  {
+    pass
+    {
+      ambient 1.0 1.0 1.0 1.0
+      diffuse 1.0 1.0 1.0 1.0
+      texture_unit
+      {
+        texture SGN_C1.png
+        filtering trilinear
+      }
+    }
+  }
+}
+

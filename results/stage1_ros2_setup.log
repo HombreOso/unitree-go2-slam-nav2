@@ -1,0 +1,20 @@
+[2026-08-23 22:33:38] === Stage 1b: ROS 2 Humble setup starting ===
+[2026-08-23 22:33:38] Ubuntu: Ubuntu 22.04.5 LTS
+[2026-08-23 22:33:38] Installing base tooling.
+[2026-08-23 22:34:05] Adding the ROS 2 apt repository.
+[2026-08-23 22:34:13] Installing ros-humble-desktop (this is the long one, ~10-20 min).
+[2026-08-23 22:38:22] Installing Gazebo Classic 11 + ROS integration.
+[2026-08-23 22:38:56] Installing SLAM (RTAB-Map, as used in the paper) and navigation (Nav2).
+[2026-08-23 22:40:56] Installing supporting ROS packages.
+[2026-08-23 22:41:16] Initialising rosdep.
+[2026-08-23 22:41:28] Creating workspace at /root/go2_ws.
+[2026-08-23 22:41:28] Linked go2_sim into the workspace.
+[2026-08-23 22:41:28] Linked go2_slam_nav into the workspace.
+[2026-08-23 22:41:28] Linked go2_cmd_processor into the workspace.
+[2026-08-23 22:41:28] Linked frontier into the workspace.
+[2026-08-23 22:41:28] Linked image_processing into the workspace.
+[2026-08-23 22:41:28] Skipping colcon build (--no-build). Run scripts/build_ws.sh when ready.
+[2026-08-23 22:41:28] Added ROS 2 sourcing to ~/.bashrc.
+[2026-08-23 22:41:28] === Stage 1b complete ===
+[2026-08-23 22:41:28] Open a NEW WSL shell, then run:
+[2026-08-23 22:41:28]   ros2 launch go2_sim scenario.launch.py scenario:=A
